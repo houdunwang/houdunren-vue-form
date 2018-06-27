@@ -8,10 +8,7 @@
               Header
             </div>
             <div class="card-body">
-              <hd-input name="title" title="title" value="content" :options="{class:'sdf'}" error=""/>
-              <hd-input name="title" title="title" value="content" :options="{class:'sdf'}" error="sdfdsfd"/>
-              <hd-input name="title" title="title" value="content" :options="{class:'sdf'}" error="sdfdsfd"/>
-              <hd-input name="title" title="title" value="content" :options="{class:'sdf'}" error="sdfdsfd"/>
+              <hd-input name="title" title="title" value="content" :options="{class:'btn-primary',style:'font-size:60px;color:green'}" error=""/>
             </div>
           </div>
         </div>

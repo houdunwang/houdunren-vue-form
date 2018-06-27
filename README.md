@@ -1,18 +1,63 @@
-# vue-form
+## hd-vue-form
 
-> A Vue.js project
+> 基于 Vue.js 生成常用HTML表单元素。
 
-## Build Setup
+## 安装
 
-``` bash
-# install dependencies
-npm install
+使用 npm 安装 `vue-form`
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+```
+npm i hd-vue-form -S
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+**完整引入**
+
+在 main.js 中写入以下内容：
+
+```
+import Vue from 'vue';
+import HdVueForm from 'HdVueForm';
+import App from './App.vue';
+
+Vue.use(HdVueForm);
+
+new Vue({
+  el: '#app',
+  render: h => h(App)
+});
+```
+
+## 组件
+
+#### 基础知识
+
+组件属性由 基本属性如 `title、value、error、name` 和 扩展属性 `options` 构成。
+
+> 使用频率高的属性我们定义为了基本属性，其他属性使用扩展属性创建
+
+**扩展属性**
+
+```
+<hd-input name="title" title="title" value="content" :options="{class:'btn-primary',style:'font-size:60px;color:green'}"/>
+```
+
+> 扩展属性中可以使用任何表单属性
+
+**错误信息**
+
+基本属性 `error` 用于显示错误信息内容，当设置了`error`属性时表单将描红并显示错误信息。
+
+#### 文本框
+
+```
+<hd-input name="title" title="标题" value="内容" error="错误信息"/>
+```
+
+#### 文本域
+
+```
+
+```
+
+
+
