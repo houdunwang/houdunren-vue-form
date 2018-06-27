@@ -3,12 +3,15 @@ var webpack = require('webpack')
 
 module.exports = {
   //修改为插件入口文件
-  entry: './src/index.js',
+  entry: {
+    'build':'./src/main.js',
+    'vue-form':'./src/index.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     //生成文件名
-    filename: 'vue-form.js',
+    filename: '[name].js',
     // library指定的就是你使用require时的模块名，这里便是require("PayKeyboard")
     library: 'VueForm',
     //libraryTarget会生成不同umd的代码,可以只是commonjs标准的，也可以是指amd标准的，也可以只是通过script标签引入的。

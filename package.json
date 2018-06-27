@@ -1,10 +1,25 @@
 {
-  "name": "vue-form",
+  "name": "houdunren-vue-form",
   "description": "A Vue.js project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "houdunwang <2300071698@qq.com>",
   "license": "MIT",
-  "private": true,
+  "main": "dist/vue-form.js",
+  "keywords": [
+    "vue",
+    "houdunren",
+    "bootstrap",
+    "后盾向军",
+    "后盾人"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/houdunwang/vue-form"
+  },
+  "bugs": {
+    "url": "https://github.com/houdunwang/vue-form/issues"
+  },
+  "homepage": "https://github.com/houdunwang/vue-form#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
