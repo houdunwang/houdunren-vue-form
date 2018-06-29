@@ -2,6 +2,8 @@
 
 > 基于 Vue.js 生成常用HTML表单元素。
 
+项目地址：https://github.com/houdunwang/hd-vue-form
+
 ## 安装
 
 使用 npm 安装 `vue-form`
@@ -38,7 +40,7 @@ new Vue({
 **扩展属性**
 
 ```
-<hd-input name="title" title="title" value="content" :options="{class:'btn-primary',style:'font-size:60px;color:green'}"/>
+<hd-input :options="{class:'btn-primary',style:'font-size:60px;color:green'}" value="后盾人"/>
 ```
 
 > 扩展属性中可以使用任何表单属性
@@ -56,7 +58,7 @@ new Vue({
 #### 文本域
 
 ```
-
+<hd-textarea name="content" title="标题" rows="2">houdunren.com</hd-textarea>
 ```
 
 

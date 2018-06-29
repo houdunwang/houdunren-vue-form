@@ -1,8 +1,10 @@
 import FormGroup from './components/FormGroup'
 import Input from './components/Input'
-
+import Textarea from './components/Textarea'
+import DatePicker from './components/DatePicker'
+import Avatar from './components/Avatar'
 const components = [
-  FormGroup, Input
+  FormGroup, Input, Textarea,DatePicker,Avatar
 ];
 const plugin = {
   install(Vue, options) {
@@ -13,10 +15,11 @@ const plugin = {
       mounted() {
       },
       props: {
-        name: {type: String},
-        title: {type: String},
-        value: {type: String, default: ''},
-        error: {type: String, default: ''},
+        // name: {type: String},
+        // title: {type: String},
+        // value: {type: String, default: ''},
+        // error: {type: String, default: ''},
+        // rows: {type: [String,Number], default: 3},
         options: {
           type: Object,
           default: () => {
@@ -26,6 +29,7 @@ const plugin = {
       },
       computed: {
         className() {
+          if(!this.options.class)this.options.class='';
           if (this.error) {
             this.options.class += ' is-invalid';
           }

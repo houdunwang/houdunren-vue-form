@@ -9,7 +9,12 @@
 </template>
 <script>
   export default {
-    name: "HdInput"
+    name: "HdInput",
+    data() {
+      return {
+        value1: ''
+      };
+    }
   }
 </script>
 <style scoped>

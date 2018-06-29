@@ -5,7 +5,7 @@ module.exports = {
   //修改为插件入口文件
   entry: {
     'build':'./src/main.js',
-    'vue-form':'./src/index.js'
+    'houdunren-vue-form':'./src/index.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -43,6 +43,10 @@ module.exports = {
           'css-loader',
           'sass-loader?indentedSyntax'
         ],
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader'
       },
       {
         test: /\.vue$/,

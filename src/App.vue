@@ -4,11 +4,15 @@
       <div class="row justify-content-around">
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header">
-              Header
-            </div>
             <div class="card-body">
-              <hd-input name="title" title="title" value="content" :options="{class:'btn-primary',style:'font-size:60px;color:green'}" error=""/>
+              <form>
+                <div class="form-group">
+                  <label for="">dsdf</label>
+                  <hd-avatar></hd-avatar>
+                  <small id="helpId" class="form-text text-muted">Help text</small>
+                </div>
+                <button>send</button>
+              </form>
             </div>
           </div>
         </div>
