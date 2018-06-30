@@ -4,7 +4,12 @@
 
 项目地址：https://github.com/houdunwang/hd-vue-form
 
+## 依赖组件
+
+组件依赖 [houdunren-view-form](https://github.com/houdunwang/houdunren-vue-form) 组件，所以必须先安装组件才可以继续操作。
+
 ## 安装
+
 ### 前台配置
 使用 npm 安装 `vue-form`
 
