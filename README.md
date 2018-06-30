@@ -2,7 +2,7 @@
 
 > 基于 Vue.js 生成常用HTML表单元素。
 
-项目地址：https://github.com/houdunwang/hd-vue-form
+项目地址：https://www.npmjs.com/package/houdunren-vue-form
 
 ## 依赖组件
 
