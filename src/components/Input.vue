@@ -10,6 +10,9 @@
 <script>
   export default {
     name: "HdInput",
+    props:{
+
+    },
     data() {
       return {
         value1: ''

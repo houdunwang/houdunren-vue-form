@@ -7,8 +7,10 @@
             <div class="card-body">
               <form>
                 <div class="form-group">
-                  <label for="">dsdf</label>
-                  <hd-avatar></hd-avatar>
+                  <label>测试</label>
+                  <hd-textarea name="content" title="标题" rows="5" error="333">houdunren.com</hd-textarea>
+                  <hd-input :options="{class:'isbox',style:'color:green'}" value="后盾人" name="title" error="错误信息"/>
+                  <hd-image name="avatar"></hd-image>
                   <small id="helpId" class="form-text text-muted">Help text</small>
                 </div>
                 <button>send</button>
@@ -21,8 +23,10 @@
   </div>
 </template>
 <script>
+  import HdImage from "./components/Image";
   export default {
     name: 'app',
+    components: {HdImage},
     data() {
       return {
         msg: 'Welcome to Your Vue.js App'

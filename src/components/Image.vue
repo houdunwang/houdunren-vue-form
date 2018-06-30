@@ -1,13 +1,14 @@
 <template>
   <el-upload
     class="avatar-uploader"
-    action="http://hdcms-laravel.hd/handle/upload"
+    :action="url"
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :on-remove="handleRemove"
     :before-upload="beforeAvatarUpload">
     <img v-if="imageUrl" :src="imageUrl" class="avatar">
     <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    <input hidden type="text" :name="name" :value="imageUrl">
   </el-upload>
 </template>
 <style>
@@ -37,7 +38,10 @@
 </style>
 <script>
   export default {
-    name:'HdAvatar',
+    name:'HdImage',
+    props:{
+      name:{type:String,default:''}
+    },
     data() {
       return {
         imageUrl: ''
@@ -45,7 +49,11 @@
     },
     methods: {
       handleAvatarSuccess(res, file) {
-        this.imageUrl = URL.createObjectURL(file.raw);
+        if(res.code!=0){
+          return this.$message.error(res.message);
+        }
+        this.imageUrl = res.file;
+        // this.imageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';

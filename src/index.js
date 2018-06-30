@@ -2,12 +2,14 @@ import FormGroup from './components/FormGroup'
 import Input from './components/Input'
 import Textarea from './components/Textarea'
 import DatePicker from './components/DatePicker'
-import Avatar from './components/Avatar'
+import Image from './components/Image'
+import _ from 'lodash'
 const components = [
-  FormGroup, Input, Textarea,DatePicker,Avatar
+  FormGroup, Input, Textarea,DatePicker,Image
 ];
 const plugin = {
   install(Vue, options) {
+    options = _.isObject(options)?options:{url:''};
     if (plugin.installed) return;
     components.map(component => Vue.component(component.name, component));
     //子组件复用
@@ -15,11 +17,12 @@ const plugin = {
       mounted() {
       },
       props: {
-        // name: {type: String},
-        // title: {type: String},
-        // value: {type: String, default: ''},
-        // error: {type: String, default: ''},
-        // rows: {type: [String,Number], default: 3},
+        url:{default:options.url},
+        name: {type: String},
+        title: {type: String},
+        value: {type: String, default: ''},
+        error: {type: String, default: ''},
+        rows: {type: [String,Number], default: 3},
         options: {
           type: Object,
           default: () => {
