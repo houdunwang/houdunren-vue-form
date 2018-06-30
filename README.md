@@ -89,5 +89,22 @@ return ['message' => '错误内容', 'code' => 403];
 <hd-image name="avatar"></hd-image>
 ```
 
+![image-20180701031721248](assets/image-20180701031721248.png)
+
 > 图片会用到后台处理，前查看前面介绍的 `后台处理` 章节
 
+#### 日期选择
+
+```
+<hd-datepicker name="date" value="2019-2-22"></hd-datepicker>
+```
+
+![image-20180701031305803](assets/image-20180701031305803.png)
+
+#### 日期时间
+
+```
+<hd-datetimepicker name="datetimepicker" value="2019-2-18 06:26:18"></hd-datetimepicker>
+```
+
+![image-20180701031550934](assets/image-20180701031550934.png)

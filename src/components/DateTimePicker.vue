@@ -1,32 +1,28 @@
 <template>
     <el-date-picker
-      v-model="dateValue"
+      v-model="value2"
+      type="datetime"
+      placeholder="选择日期时间"
       align="left"
-      type="date"
       :name="name"
-      placeholder="选择日期"
-      default-value="2018-12-11"
-      :picker-options="pickerOptions">
+      :picker-options="pickerOptions1">
     </el-date-picker>
 </template>
 <style>
-  .el-date-editor.el-input{
-    width: 100% !important;
+  .el-time-spinner{
+    white-space:normal !important;
   }
 </style>
 <script>
   export default {
-    name:"HdDatepicker",
+    name:"HdDatetimepicker",
     props:{
       name:String,
       value:String
     },
     data() {
       return {
-        pickerOptions: {
-          disabledDate(time) {
-            // return time.getTime() > Date.now();
-          },
+        pickerOptions1: {
           shortcuts: [{
             text: '今天',
             onClick(picker) {
@@ -48,7 +44,7 @@
             }
           }]
         },
-        dateValue: this.value,
+        value2: this.value,
       };
     }
   };

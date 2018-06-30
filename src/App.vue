@@ -1,29 +1,34 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <label>测试</label>
-                  <hd-textarea name="content" title="标题" rows="5" error="333">houdunren.com</hd-textarea>
-                  <hd-input :options="{class:'isbox',style:'color:green'}" value="后盾人" name="title" error="错误信息"/>
-                  <hd-image name="avatar"></hd-image>
-                  <small id="helpId" class="form-text text-muted">Help text</small>
-                </div>
-                <button>send</button>
-              </form>
-            </div>
-          </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <form action="">
+            <hd-input value="a" error="33"></hd-input>
+            <hr>
+            <hd-textarea>这是内容</hd-textarea>
+            <hr>
+            <hd-datepicker name="date" value="2019-2-22"></hd-datepicker>
+            <hr>
+            <hd-datetimepicker name="datetimepicker" value="2019-2-18 06:26:18"></hd-datetimepicker>
+            <hr>
+            <hd-image></hd-image>
+            <hd-image></hd-image>
+            <hr>
+            <button type="submit">提交</button>
+          </form>
         </div>
       </div>
     </div>
+    <div style="height: 500px;"></div>
   </div>
+
 </template>
+<style>
+</style>
 <script>
   import HdImage from "./components/Image";
+
   export default {
     name: 'app',
     components: {HdImage},

@@ -7,11 +7,14 @@
     :on-remove="handleRemove"
     :before-upload="beforeAvatarUpload">
     <img v-if="imageUrl" :src="imageUrl" class="avatar">
-    <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+    <i v-else class="el-icon-plus avatar-uploader-icon hd-avatar-uploader-icon"></i>
     <input hidden type="text" :name="name" :value="imageUrl">
   </el-upload>
 </template>
 <style>
+  .hd-avatar-uploader-icon{
+    /*line-height: 178px !important;*/
+  }
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
@@ -27,11 +30,11 @@
     color: #8c939d;
     width: 178px;
     height: 178px;
-    line-height: 178px;
+    line-height: 178px !important;
     text-align: center;
   }
   .avatar {
-    width: 178px;
+    max-width: 600px;
     height: 178px;
     display: block;
   }
@@ -53,7 +56,6 @@
           return this.$message.error(res.message);
         }
         this.imageUrl = res.file;
-        // this.imageUrl = URL.createObjectURL(file.raw);
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';
@@ -67,7 +69,6 @@
         return isJPG && isLt2M;
       },
       handleRemove(file, fileList) {
-
       }
     }
   }

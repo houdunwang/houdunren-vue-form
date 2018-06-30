@@ -1,11 +1,11 @@
-import FormGroup from './components/FormGroup'
 import Input from './components/Input'
 import Textarea from './components/Textarea'
 import DatePicker from './components/DatePicker'
 import Image from './components/Image'
+import DateTimePicker from './components/DateTimePicker'
 import _ from 'lodash'
 const components = [
-  FormGroup, Input, Textarea,DatePicker,Image
+   Input, Textarea,DatePicker,Image,DateTimePicker
 ];
 const plugin = {
   install(Vue, options) {
@@ -18,11 +18,6 @@ const plugin = {
       },
       props: {
         url:{default:options.url},
-        name: {type: String},
-        title: {type: String},
-        value: {type: String, default: ''},
-        error: {type: String, default: ''},
-        rows: {type: [String,Number], default: 3},
         options: {
           type: Object,
           default: () => {

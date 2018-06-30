@@ -1,21 +1,29 @@
 <template>
-  <div class="form-group row">
-    <label class="col-3 col-lg-2 col-form-label text-right" v-html="title"></label>
-    <div class="col-9 col-lg-10">
-      <textarea class="form-control" :name="name" :title="title" :rows="rows" v-bind="options" :class="className" v-html="values"><slot></slot></textarea>
-      <span class="invalid-feedback" role="alert" v-show="error"><strong v-html="error"></strong></span>
-    </div>
+  <div>
+    <textarea class="form-control" :name="name" :title="title" :rows="rows" v-bind="options" :class="className" v-html="values"><slot></slot></textarea>
+    <span class="invalid-feedback" role="alert" v-show="error"><strong v-html="error"></strong></span>
   </div>
 </template>
 <script>
   export default {
     name: "HdTextarea",
+    props:{
+      name: {type: String},
+      title: {type: String},
+      value: {type: String, default: ''},
+      error: {type: String, default: ''},
+      rows: {type: [String,Number], default: 3},
+    },
     mounted(){
-      console.log(this.$slots.default[0].text);
+      // if(this.$slots.default[0]){
+      //   console.log(this.$slots.default[0].text);
+      // }
     },
     computed:{
       values:function(){
-        return this.$slots.default[0].text;
+        if(this.$slots.default && this.$slots.default[0]){
+          return this.$slots.default[0].text;
+        }
       }
     }
   }
