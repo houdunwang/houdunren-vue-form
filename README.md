@@ -87,8 +87,11 @@ return ['message' => '错误内容', 'code' => 403];
 #### 单张图片
 
 ```
-<hd-image name="avatar"></hd-image>
+<hd-image name="avatar" image-url="http://www.houdunwang.com/attachment/2018/05/29/90651527574866.jpg"></hd-image>
 ```
+
+* name——表单name
+* image-url——默认显示图片
 
 ![image-20180701031721248](assets/image-20180701031721248.png)
 
@@ -109,3 +112,11 @@ return ['message' => '错误内容', 'code' => 403];
 ```
 
 ![image-20180701031550934](assets/image-20180701031550934.png)
+
+### 编辑器
+
+```
+<hd-simditor name="content" url="/upload-simditor"></hd-simditor>
+```
+* name——表单name用于POST提交
+* url——文件上传地址，默认址为 /upload-simditor

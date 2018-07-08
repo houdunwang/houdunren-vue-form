@@ -3,9 +3,10 @@ import Textarea from './components/Textarea'
 import DatePicker from './components/DatePicker'
 import Image from './components/Image'
 import DateTimePicker from './components/DateTimePicker'
+import Simditor from './components/Simditor'
 import _ from 'lodash'
 const components = [
-   Input, Textarea,DatePicker,Image,DateTimePicker
+   Input, Textarea,DatePicker,Image,DateTimePicker,Simditor
 ];
 const plugin = {
   install(Vue, options) {
@@ -48,6 +49,6 @@ const plugin = {
   }
 }
 if (typeof window !== 'undefined' && window.Vue) {
-  plugin(window.Vue)
+  window.Vue.use(plugin)
 }
 export default plugin

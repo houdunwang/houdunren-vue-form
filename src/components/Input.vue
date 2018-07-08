@@ -15,6 +15,7 @@
       rows: {type: [String,Number], default: 3},
     },
     data() {
+
       return {
         value1: ''
       };

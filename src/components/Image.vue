@@ -43,12 +43,16 @@
   export default {
     name:'HdImage',
     props:{
-      name:{type:String,default:''}
+      name:{type:String,default:''},
+      imageUrl:{type:String}
     },
     data() {
       return {
-        imageUrl: ''
+        // imageUrl: ''
       };
+    },
+    mountedL(){
+      alert(this.imageUrl)
     },
     methods: {
       handleAvatarSuccess(res, file) {
