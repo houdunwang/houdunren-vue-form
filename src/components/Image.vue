@@ -63,6 +63,7 @@
       }
     },
     mounted(){
+      this.src=this.imageUrl;
       let token = document.head.querySelector('meta[name="csrf-token"]');
       if (token) {
         this.headers['X-CSRF-TOKEN'] = token.content;

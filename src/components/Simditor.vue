@@ -12,15 +12,14 @@
   require('simditor/site/assets/scripts/hotkeys.js')
   require('simditor/site/assets/scripts/uploader.js')
   import Simditor from 'simditor/site/assets/scripts/simditor.js'
-
   export default {
     name: "HdSimditor",
     props: {
       url: {type: String},
-      name:{type: String, default: 'content'},
+      name: {type: String, default: 'content'},
     },
     mounted() {
-     let token = document.head.querySelector('meta[name="csrf-token"]');
+      let token = document.head.querySelector('meta[name="csrf-token"]');
       let editor = new Simditor({
         textarea: $('#' + this.name),
         pasteImage: true,
@@ -37,7 +36,7 @@
     computed: {},
     data: function () {
       return {
-        content:this.$slots.default && this.$slots.default[0]?this.$slots.default[0].text:''
+        content: this.$slots.default && this.$slots.default[0] ? this.$slots.default[0].text : ''
       }
     }
   }
