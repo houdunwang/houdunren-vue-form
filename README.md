@@ -38,16 +38,12 @@ new Vue({
 });
 ```
 
-### 后台处理
+### CSRF
 
-组件会提交 `file` 字段的表单，后台返回的合理数据结构如下：
+针对 Laravel 等后端框架，需要在 head 标签设置CSRF
 
 ```
-#上传成功返回结果
-return ['file' => '文件地址', 'code' => 0];
-
-#上传失败返回结果，系统会自动弹出错误信息
-return ['message' => '错误内容', 'code' => 403];
+<meta name="csrf-token" content="{{ csrf_token() }}">
 ```
 
 ## 组件
@@ -95,7 +91,15 @@ return ['message' => '错误内容', 'code' => 403];
 
 ![image-20180701031721248](assets/image-20180701031721248.png)
 
-> 图片会用到后台处理，前查看前面介绍的 `后台处理` 章节
+**后台返回值**
+
+```
+#上传成功返回结果
+return ['file' => '文件地址', 'code' => 0];
+
+#上传失败返回结果，系统会自动弹出错误信息
+return ['message' => '错误内容', 'code' => 403];
+```
 
 #### 日期选择
 
@@ -120,3 +124,13 @@ return ['message' => '错误内容', 'code' => 403];
 ```
 * name——表单name用于POST提交
 * url——文件上传地址，默认址为 /upload-simditor
+
+**后台返回值**
+
+```
+return [
+	"success"   => true,
+	"msg"       => "上传成功",
+	"file_path" => "1.jpg"//文件地址
+];
+```

@@ -5,16 +5,18 @@
     :show-file-list="false"
     :on-success="handleAvatarSuccess"
     :on-remove="handleRemove"
+    :headers="headers"
     :before-upload="beforeAvatarUpload">
-    <img v-if="imageUrl" :src="imageUrl" class="avatar">
+    <img v-if="src" :src="src" class="avatar">
     <i v-else class="el-icon-plus avatar-uploader-icon hd-avatar-uploader-icon"></i>
-    <input hidden type="text" :name="name" :value="imageUrl">
+    <input hidden type="text" :name="name" :value="src">
   </el-upload>
 </template>
 <style>
-  .hd-avatar-uploader-icon{
+  .hd-avatar-uploader-icon {
     /*line-height: 178px !important;*/
   }
+
   .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
@@ -22,9 +24,11 @@
     position: relative;
     overflow: hidden;
   }
+
   .avatar-uploader .el-upload:hover {
     border-color: #409EFF;
   }
+
   .avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
@@ -33,6 +37,7 @@
     line-height: 178px !important;
     text-align: center;
   }
+
   .avatar {
     max-width: 600px;
     height: 178px;
@@ -41,25 +46,34 @@
 </style>
 <script>
   export default {
-    name:'HdImage',
-    props:{
-      name:{type:String,default:''},
-      imageUrl:{type:String}
+    name: 'HdImage',
+    props: {
+      name: {type: String, default: ''},
+      imageUrl: {type: String}
     },
     data() {
       return {
-        // imageUrl: ''
-      };
+        src:'',
+        headers:{}
+      }
     },
-    mountedL(){
-      alert(this.imageUrl)
+    watch:{
+      imageUrl(val){
+        this.src = val;
+      }
+    },
+    mounted(){
+      let token = document.head.querySelector('meta[name="csrf-token"]');
+      if (token) {
+        this.headers['X-CSRF-TOKEN'] = token.content;
+      }
     },
     methods: {
       handleAvatarSuccess(res, file) {
-        if(res.code!=0){
+        if (res.code != 0) {
           return this.$message.error(res.message);
         }
-        this.imageUrl = res.file;
+        this.src = res.file;
       },
       beforeAvatarUpload(file) {
         const isJPG = file.type === 'image/jpeg';

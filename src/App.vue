@@ -14,8 +14,7 @@
             <hr>
             <hd-datetimepicker name="datetimepicker" value="2019-2-18 06:26:18"></hd-datetimepicker>
             <hr>
-            <hd-image></hd-image>
-            <hd-image></hd-image>
+            <hd-image url="http://hdcms-laravel.hd/upload"></hd-image>
             <hr>
             <button type="submit">提交</button>
           </form>
