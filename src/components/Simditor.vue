@@ -4,6 +4,9 @@
   </div>
 </template>
 <style>
+  .simditor img{
+    max-width: 100%;
+  }
 </style>
 <script>
   import $ from 'jquery'
