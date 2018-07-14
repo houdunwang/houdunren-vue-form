@@ -49,7 +49,8 @@
     name: 'HdImage',
     props: {
       name: {type: String, default: ''},
-      imageUrl: {type: String}
+      imageUrl: {type: String},
+      allowSize:{default:.5}
     },
     data() {
       return {
@@ -77,15 +78,16 @@
         this.src = res.file;
       },
       beforeAvatarUpload(file) {
-        const isJPG = file.type === 'image/jpeg';
-        const isLt2M = file.size / 1024 / 1024 < 2;
-        if (!isJPG) {
-          this.$message.error('上传图片只能是 JPG 格式!');
+        const isLt2M = file.size / 1024 / 1024 < this.allowSize;
+        const isImage = /(jpg|jpeg|png|gif)$/i.test(file.name);
+        if (!isImage) {
+          this.$message.error('上传图片不合法!');
         }
         if (!isLt2M) {
-          this.$message.error('上传头像图片大小不能超过 2MB!');
+          let unit = this.allowSize>1?this.allowSize+'MB':Math.ceil(this.allowSize*1024)+'KB';
+          this.$message.error('上传头像图片大小不能超过 '+unit);
         }
-        return isJPG && isLt2M;
+        return isImage && isLt2M;
       },
       handleRemove(file, fileList) {
       }
