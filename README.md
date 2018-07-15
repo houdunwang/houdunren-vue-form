@@ -91,6 +91,7 @@ new Vue({
 | name       | 表单name                         |
 | image-url  | 默认显示图片                     |
 | allow-szie | 允许在传大小单位MB，可以设置小数 |
+| url        | 后台处理地址                     |
 
 ![image-20180701031721248](assets/image-20180701031721248.png)
 
