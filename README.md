@@ -86,8 +86,11 @@ new Vue({
 <hd-image name="avatar" image-url="http://www.houdunwang.com/attachment/2018/05/29/90651527574866.jpg"></hd-image>
 ```
 
-* name——表单name
-* image-url——默认显示图片
+| 属性       | 说明                             |
+| ---------- | -------------------------------- |
+| name       | 表单name                         |
+| image-url  | 默认显示图片                     |
+| allow-szie | 允许在传大小单位MB，可以设置小数 |
 
 ![image-20180701031721248](assets/image-20180701031721248.png)
 
