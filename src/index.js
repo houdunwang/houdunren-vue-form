@@ -2,11 +2,12 @@ import Input from './components/Input'
 import Textarea from './components/Textarea'
 import DatePicker from './components/DatePicker'
 import Image from './components/Image'
+import Images from './components/Images'
 import DateTimePicker from './components/DateTimePicker'
 import Simditor from './components/Simditor'
 import _ from 'lodash'
 const components = [
-   Input, Textarea,DatePicker,Image,DateTimePicker,Simditor
+   Input, Textarea,DatePicker,Image,DateTimePicker,Simditor,Images
 ];
 const plugin = {
   install(Vue, options) {

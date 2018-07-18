@@ -105,6 +105,25 @@ return ['file' => '文件地址', 'code' => 0];
 return ['message' => '错误内容', 'code' => 403];
 ```
 
+### 多图上传
+
+![image-20180718121706125](assets/image-20180718121706125.png)
+
+```
+<hd-images name="imagesform" :image-url="[{name: 'food2.jpeg', url: 'http://www.houdunwang.com/attachment/2018/05/29/90651527574866.jpg'}]"></hd-images>
+```
+
+| 属性       | 说明                             |
+| ---------- | -------------------------------- |
+| name       | 表单name                         |
+| image-url  | 默认显示图片，数组格式           |
+| allow-szie | 允许在传大小单位MB，可以设置小数 |
+| url        | 后台处理地址                     |
+
+后台处理和上面的图片上传一样，共用一个方法就可以。
+
+
+
 #### 日期选择
 
 ```

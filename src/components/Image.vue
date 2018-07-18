@@ -85,7 +85,7 @@
         }
         if (!isLt2M) {
           let unit = this.allowSize>1?this.allowSize+'MB':Math.ceil(this.allowSize*1024)+'KB';
-          this.$message.error('上传头像图片大小不能超过 '+unit);
+          this.$message.error('上传图片大小不能超过 '+unit);
         }
         return isImage && isLt2M;
       },
