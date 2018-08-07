@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <form action="">
+          <form action="" enctype="multipart/form-data">
             <br>
             <hd-images name="imagesform" :image-url="[{name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]"></hd-images>
             <hr>

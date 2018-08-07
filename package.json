@@ -1,7 +1,7 @@
 {
   "name": "houdunren-vue-form",
   "description": "A Vue.js project",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "author": "houdunwang <2300071698@qq.com>",
   "license": "MIT",
   "main": "dist/houdunren-vue-form.js",
